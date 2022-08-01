@@ -209,18 +209,18 @@
   margin: 2rem auto 0 auto;
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 2rem;
+  gap: 2rem;
 }
-.projects-item {
+.projects__item {
   position: relative;
   border-bottom: 5px solid #ff652f;
   overflow: hidden;
   cursor: pointer;
 }
-.projects-item img {
+.projects__item img {
   width: 100%;
 }
-.projects-item::after {
+.projects__item::after {
   content: "";
   position: absolute;
   top: 100%;
@@ -231,11 +231,11 @@
   opacity: 0;
   transition: all 0.3s ease-in-out;
 }
-.projects-item:hover::after {
+.projects__item:hover::after {
   top: 0;
   opacity: 0.9;
 }
-.projects-item:hover .projects__btn {
+.projects__item:hover .projects__btn {
   opacity: 1;
 }
 .projects__btns {
@@ -290,6 +290,56 @@
   margin-top: 2rem;
 }
 
+@media screen and (min-width: 768px) {
+  .menu-btn {
+    visibility: hidden;
+  }
+  .nav {
+    visibility: visible;
+  }
+  .nav .menu-nav {
+    display: block;
+    transform: translateY(0);
+    height: 100%;
+    background: transparent;
+    text-align: right;
+  }
+  .nav .menu-nav__item {
+    display: inline;
+    padding-right: 1.5rem;
+  }
+  .nav .menu-nav__link {
+    font-size: 1.5rem;
+  }
+  .about__bio {
+    font-size: 1.5rem;
+  }
+  .projects__bio-image {
+    height: 40vh;
+  }
+  .projects__items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .projects .text-secondary {
+    font-size: 3rem;
+  }
+  .contact__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .projects__items {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .contact__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1600px) {
+  .projects__bio-image {
+    height: 50vh;
+  }
+}
 body {
   background: #272727;
   color: #fff;
